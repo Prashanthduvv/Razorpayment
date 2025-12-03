@@ -1,0 +1,248 @@
+/* PAGE CONTAINER */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Gradient Background */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* Centering Utility */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+/* ---------- CARD ---------- */
+.card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Fade animation */
+.animate-fade {
+  animation: fadeIn 0.7s ease;
+}
+
+/* Slide animation */
+.animate-slide {
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+
+/* ---------- TEXT ---------- */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.title-icon {
+  font-size: 28px;
+  color: #60a5fa;
+}
+
+
+/* ---------- INPUT FIELD ---------- */
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  color: #e2e8f0;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.25s;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #60a5fa;
+}
+
+
+/* ---------- PRESET BUTTONS ---------- */
+.preset-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 22px;
+}
+
+.preset-btn {
+  padding: 10px 0;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.preset-btn:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.preset-active {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+
+/* ---------- PAY BUTTON ---------- */
+.actions {
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pay-icon {
+  font-size: 20px;
+}
+
+/* Spinner */
+.spinner {
+  font-size: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* ---------- ALERTS ---------- */
+.alert {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.alert-icon {
+  font-size: 20px;
+}
+
+.alert.success {
+  background: rgba(16, 185, 129, 0.8);
+  border-left: 4px solid #059669;
+}
+
+.alert.error {
+  background: rgba(239, 68, 68, 0.8);
+  border-left: 4px solid #dc2626;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .preset-btn {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .preset-btn {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}

@@ -11,14 +11,15 @@ const app = express();
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL,
-      "http://localhost:5173",
-      "https://razorpayment.vercel.app"
+      process.env.FRONTEND_URL,     // Main production domain
+      /\.vercel\.app$/,             // All Vercel preview deployments
+      "http://localhost:5173"       // Local development
     ],
     methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
+
 
 
 app.use(bodyParser.json());

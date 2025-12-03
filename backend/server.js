@@ -10,11 +10,16 @@ const app = express();
 // Minimal CORS for development - allow configured frontend or localhost
 app.use(
   cors({
-    origin: FRONTEND_URL || "http://localhost:5173",
+    origin: [
+      process.env.FRONTEND_URL,
+      "http://localhost:5173",
+      "https://razorpayment.vercel.app"
+    ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   })
 );
+
 
 app.use(bodyParser.json());
 

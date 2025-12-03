@@ -8,34 +8,32 @@ import { PORT, RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, FRONTEND_URL } from "./conf
 const app = express();
 
 // Minimal CORS for development - allow configured frontend or localhost
-import cors from "cors";
-
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Development localhost
       const allowedOrigins = [
         "http://localhost:5173",
-        process.env.FRONTEND_URL,  // Production Vercel URL
+        "https://razorpayment.vercel.app",   // Production site
       ];
 
-      // Allow all Vercel preview deployments:
+      // Allow ALL Vercel preview URLs
       if (origin && origin.endsWith(".vercel.app")) {
         return callback(null, true);
       }
 
-      // Allow whitelisted origins
+      // Allow localhost + production
       if (!origin || allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
-      // Block everything else
+      // Otherwise block it
       return callback(new Error("CORS Not Allowed"));
     },
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
   })
 );
+
 
 
 
